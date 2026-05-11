@@ -1,0 +1,108 @@
+laserMapping:
+  ros__parameters:
+    common:
+      img_topic: "/camera/image_raw"
+      lid_topic: "/livox/lidar"
+      imu_topic: "/livox/imu"
+      img_en: 1
+      lidar_en: 1
+      ros_driver_bug_fix: false
+
+    # IMU <-> LiDAR extrinsic retained from the original Avia profile until a robot-room IMU/LiDAR calibration is provided.
+    extrin_calib:
+      extrinsic_T: [0.04165, 0.02326, -0.0284]
+      extrinsic_R: [1.0, 0.0, 0.0,
+                    0.0, 1.0, 0.0,
+                    0.0, 0.0, 1.0]
+      # LiDAR -> camera calibration from /home/loe/workspace/data/lidar_calib2/data6.
+      Rcl: [-0.03340039162274794, -0.9993099348169587, -0.01625016970905299,
+             0.7687863685355503, -0.015299221649529945, -0.6393226520082328,
+             0.6386328627571309, -0.03384653590907808, 0.7687668558240446]
+      Pcl: [0.07693108188501069, -0.036788973614886596, 0.025391055718915433]
+
+    time_offset:
+      imu_time_offset: 0.0
+      img_time_offset: 0.0
+      lidar_time_offset: 0.0
+      exposure_time_init: 0.0
+
+    preprocess:
+      point_filter_num: 1
+      filter_size_surf: 0.1
+      lidar_type: 1
+      scan_line: 6
+      blind: 0.5
+      hilti_en: false
+      feature_extract_enabled: false
+
+    vio:
+      max_iterations: 5
+      outlier_threshold: 1000.0
+      img_point_cov: 100.0
+      patch_size: 8
+      patch_pyrimid_level: 4
+      grid_size: 5
+      grid_n_height: 17
+      normal_en: true
+      raycast_en: false
+      inverse_composition_en: false
+      exposure_estimate_en: true
+      inv_expo_cov: 0.1
+
+    imu:
+      imu_en: true
+      imu_int_frame: 30
+      acc_cov: 0.5
+      gyr_cov: 0.3
+      gravity_est_en: true
+      ba_bg_est_en: true
+
+    lio:
+      max_iterations: 5
+      dept_err: 0.02
+      beam_err: 0.05
+      min_eigen_value: 0.0025
+      sigma_num: 3.0
+      voxel_size: 0.5
+      max_layer: 2
+      max_points_num: 50
+      layer_init_num: [5, 5, 5, 5, 5]
+
+    local_map:
+      map_sliding_en: false
+      half_map_size: 100
+      sliding_thresh: 8.0
+
+    uav:
+      imu_rate_odom: false
+      gravity_align_en: false
+
+    publish:
+      map_pub_en: true
+      map_pub_interval: 1
+      map_pub_voxel_size: 0.0
+      map_pub_max_points: 2000000
+      dense_map_en: false
+      pub_effect_point_en: false
+      pub_plane_en: false
+      pub_scan_num: 1
+      blind_rgb_points: 0.0
+
+    evo:
+      seq_name: "robot_room"
+      pose_output_en: false
+
+    pcd_save:
+      pcd_save_en: false
+      type: 0
+      colmap_output_en: false
+      filter_size_pcd: 0.15
+      interval: 2
+
+    image_save:
+      img_save_en: false
+      interval: 1
+
+    debug:
+      plot_time: -10.0
+      frame_cnt: 6

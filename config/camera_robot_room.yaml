@@ -1,0 +1,15 @@
+laserMapping:
+  ros__parameters:
+    cam_model: "Pinhole"
+    cam_width: 3072
+    cam_height: 2048
+    scale: 1.0
+    cam_fx: 2515.46389
+    cam_fy: 2514.54045
+    cam_cx: 1517.39009
+    cam_cy: 1022.89654
+    cam_d0: -0.04992
+    cam_d1: 0.068348
+    cam_d2: -0.000061
+    cam_d3: -0.001066
+    cam_d4: 0.0

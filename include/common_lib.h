@@ -17,9 +17,8 @@ which is included as part of this source code package.
 #include <utils/types.h>
 #include <utils/color.h>
 #include <opencv2/opencv.hpp>
-#include <sensor_msgs/Imu.h>
+#include "ros2_types.hpp"
 #include <sophus/se3.h>
-#include <tf/transform_broadcaster.h>
 
 using namespace std;
 using namespace Eigen;
@@ -63,7 +62,7 @@ struct MeasureGroup
 {
   double vio_time;
   double lio_time;
-  deque<sensor_msgs::Imu::ConstPtr> imu;
+  deque<ImuConstPtr> imu;
   cv::Mat img;
   MeasureGroup()
   {

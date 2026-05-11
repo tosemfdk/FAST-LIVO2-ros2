@@ -227,7 +227,7 @@ void LIVMapper::initializeSubscribersAndPublishers()
   pubNormal = create_publisher<visualization_msgs::msg::MarkerArray>("visualization_marker", 100);
   pubSubVisualMap = create_publisher<PointCloud2Msg>("/cloud_visual_sub_map_before", 100);
   pubLaserCloudEffect = create_publisher<PointCloud2Msg>("/cloud_effected", 100);
-  pubLaserCloudMap = create_publisher<PointCloud2Msg>("/Laser_map", 100);
+  pubLaserCloudMap = create_publisher<PointCloud2Msg>("/cloud_visual_map", 100);
   pubOdomAftMapped = create_publisher<nav_msgs::msg::Odometry>("/aft_mapped_to_init", 10);
   pubPath = create_publisher<nav_msgs::msg::Path>("/path", 10);
   plane_pub = create_publisher<visualization_msgs::msg::Marker>("/planner_normal", 1);

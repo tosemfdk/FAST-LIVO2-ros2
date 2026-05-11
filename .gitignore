@@ -1,2 +1,6 @@
 Log/*
 build/*
+
+# ROS2/colcon generated artifacts
+install/
+log/
